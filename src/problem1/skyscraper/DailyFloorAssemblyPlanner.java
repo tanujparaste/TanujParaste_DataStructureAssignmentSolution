@@ -1,4 +1,4 @@
-package skyscraper;
+package problem1.skyscraper;
 
 import java.util.LinkedList;
 import java.util.Queue;

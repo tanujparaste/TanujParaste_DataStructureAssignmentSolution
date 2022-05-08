@@ -1,4 +1,4 @@
-package bst;
+package problem2.bst;
 
 import java.util.ArrayList;
 import java.util.List;
