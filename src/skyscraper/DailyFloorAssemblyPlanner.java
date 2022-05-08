@@ -6,7 +6,7 @@ import java.util.Scanner;
 import java.util.Stack;
 
 public class DailyFloorAssemblyPlanner {
-	private static final Scanner READ = new Scanner(System.in);
+	private static final Scanner in = new Scanner(System.in);
 
 	public static void main(String[] args) {
 		System.out.println("Enter the total no of floors in the building");
@@ -14,18 +14,17 @@ public class DailyFloorAssemblyPlanner {
 		Queue<Integer> dailyFloorSizes = null;
 		boolean isValidSize = true;
 		try {
-			numFloors = READ.nextInt();
+			numFloors = in.nextInt();
 			if (numFloors <= 0) {
 				throw new Exception("Not valid number of floors, exiting...");
 			}
 
 			dailyFloorSizes = new LinkedList<>();
-//			boolean isValidSize = true;
 
 			for (int day = 1; day <= numFloors; day++) {
 				System.out.println("Enter the floor size given on day:" + day);
 
-				int factorySize = READ.nextInt();
+				int factorySize = in.nextInt();
 
 				if (factorySize <= 0) {
 					throw new Exception("Invalid floor size " + factorySize + "! Size can't be less than 1");
@@ -48,7 +47,7 @@ public class DailyFloorAssemblyPlanner {
 			planDailyFloors(dailyFloorSizes, numFloors, numFloors);
 		}
 
-		READ.close();
+		in.close();
 	}
 
 	private static void planDailyFloors(Queue<Integer> floors, int maxSize, int totalFloors) {
@@ -88,9 +87,9 @@ public class DailyFloorAssemblyPlanner {
 			return;
 		}
 
-		int data = stack.pop();
+		int value = stack.pop();
 		sort(stack);
-		sort(stack, data);
+		sort(stack, value);
 	}
 
 	private static void sort(Stack<Integer> stack, int data) {

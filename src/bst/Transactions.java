@@ -47,24 +47,25 @@ public class Transactions {
 		transacTree.root.left.left = new Node(10);
 		transacTree.root.right.left = new Node(55);
 
-		System.out.println("Before(PreOrder Traversal):");
+		System.out.println("Before(PreOrder Traversal): Complete BST");
 		preOrder(transacTree.root);
 
 		// tree with increasing
-		transacTree.convertToIncreasingOrder(transacTree.root);
+		transacTree.convertToRightSkewedTree(transacTree.root);
 
 		System.out.println();
-		System.out.println("After(PreOrder Traversal:");
+
+		System.out.println("After(PreOrder Traversal: Skewed BST");
 		preOrder(transacTree.root);
 
 	}
 
-	private void convertToIncreasingOrder(Node node) {
+	private void convertToRightSkewedTree(Node node) {
 		if (node == null) {
 			return;
 		}
 
-		List<Integer> sortedData = getSortedElements(node); // asc order
+		List<Integer> sortedData = getSortedElements(node);
 
 		// reset the current root and create a new right skewed tree
 		root = null;
